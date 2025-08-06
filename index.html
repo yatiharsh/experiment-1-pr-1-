@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balance App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 300px;
+    }
+
+    .balance {
+      font-size: 32px;
+      color: green;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .deposit {
+      background-color: #28a745;
+    }
+
+    .withdraw {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="balance" id="balance">$0</div>
+    <button class="btn deposit" onclick="updateBalance(10)">Deposit</button>
+    <button class="btn withdraw" onclick="updateBalance(-10)">Withdraw</button>
+  </div>
+
+  <script>
+    let balance = 0;
+    const balanceElement = document.getElementById('balance');
+
+    function updateBalance(amount) {
+      balance += amount;
+      balanceElement.textContent = `$${balance}`;
+    }
+  </script>
+
+</body>
+</html>
